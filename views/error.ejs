@@ -1,0 +1,47 @@
+<% layout('layout/boilerplate') %>
+
+<body class="profile-bg">
+
+  <div class="container vh-100 d-flex align-items-center justify-content-center">
+    <div class="row justify-content-center w-100">
+      <div class="col-md-6 col-lg-5">
+
+        <div class="card profile-card border-0 shadow-lg text-center">
+          <div class="card-body p-5">
+
+            <!-- Status Code -->
+            <h1 class="display-1 fw-bold text-danger mb-2">
+              <%= statusCode || 500 %>
+            </h1>
+
+            <!-- Title -->
+            <h4 class="fw-semibold mb-3">
+              Oops! Something went wrong
+            </h4>
+
+            <!-- Message -->
+            <p class="text-muted mb-4">
+              <%= message || "An unexpected error occurred. Please try again later." %>
+            </p>
+
+            <!-- Actions -->
+            <div class="d-grid gap-2">
+              <a href="/" class="btn btn-gradient btn-lg">
+                Go to Home
+              </a>
+              <button
+                onclick="window.history.back()"
+                class="btn btn-outline-secondary"
+              >
+                Go Back
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>

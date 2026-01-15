@@ -1,0 +1,95 @@
+/* =========================
+   STAR RATING – LEFT TO RIGHT FIX
+   ========================= */
+
+.starability-slot {
+  display: inline-flex;
+  flex-direction: row-reverse; /* This is the secret sauce */
+  justify-content: flex-end;   /* Keeps stars on the left side of the container */
+  gap: 2px;
+  border: none;
+}
+
+.starability-slot input {
+  display: none; /* Hide radio buttons completely */
+}
+
+.starability-slot label {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Empty Star SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ddd'%3E%3Cpath d='M12 17.3l6.2 3.7-1.6-7.1 5.4-4.7-7.2-.6L12 2 9.2 8.6l-7.2.6 5.4 4.7-1.6 7.1z'/%3E%3C/svg%3E");
+  transition: transform 0.2s ease;
+}
+
+/* Hover and Checked Logic */
+/* When an input is hovered or checked, it and all PREVIOUS siblings (visually next) turn gold */
+.starability-slot label:hover,
+.starability-slot label:hover ~ label,
+.starability-slot input:checked ~ label {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffc107'%3E%3Cpath d='M12 17.3l6.2 3.7-1.6-7.1 5.4-4.7-7.2-.6L12 2 9.2 8.6l-7.2.6 5.4 4.7-1.6 7.1z'/%3E%3C/svg%3E");
+}
+
+.starability-slot label:hover {
+  transform: scale(1.2);
+}
+/* Review Section Styling */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.review-card {
+    border: none !important;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.review-author {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.review-comment {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Redesigning the Delete Button */
+.btn-delete-review {
+    background-color: transparent;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-review:hover {
+    background-color: #ff4d4d;
+    color: white;
+}

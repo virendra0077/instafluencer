@@ -1,0 +1,45 @@
+<% layout('layout/boilerplate') %> 
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold m-0">Discover Influencers</h2>
+        <a href="/listings/new" class="btn btn-primary">Join as Creator</a>
+    </div>
+
+    <div class="row g-4">
+      <% for (let list of allListings) { %>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <a href="/listings/<%= list._id %>" class="text-decoration-none text-dark">
+            <div class="card profile-card shadow-sm h-100">
+              <img src="<%= list.image %>" class="card-img-top" alt="profile">
+
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="fw-bold mb-0 text-truncate" style="max-width: 70%;"><%= list.name %></h5>
+                    <!-- <span class="badge">New</span> -->
+                </div>
+                
+                <p class="text-muted small mb-3 text-uppercase fw-bold"><%= list.type %></p>
+
+                <div class="d-flex justify-content-between p-2 rounded-3 bg-light">
+                  <div class="text-center">
+                    <div class="small fw-bold"><%= list.followers %></div>
+                    <div class="text-muted" style="font-size: 0.7rem;">FOLLOWERS</div>
+                  </div>
+                  <div class="text-center border-start ps-3">
+                    <div class="small fw-bold"><%= list.reach %></div>
+                    <div class="text-muted" style="font-size: 0.7rem;">REACH</div>
+                  </div>
+                </div>
+
+                <p class="small text-muted mt-3 mb-0">
+                  <i class="fa-solid fa-location-dot me-1" style="color: #FF3366;"></i> <%= list.address %>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+</div>
