@@ -70,8 +70,8 @@ const listingsData = [
     type: "family content",
   },
   {
-    name: "Beachfront Paradise",
-    image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+    name: "Paradise",
+    image: "https://images.unsplash.com/photo-1613053342692-d0012e0444eb?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     address: "Cancun, Mexico",
     description:
       "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
@@ -80,8 +80,8 @@ const listingsData = [
     type: "family content",
   },
   {
-    name: "Rustic Cabin by the Lake",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
+    name: "bruce mars",
+    image: "https://images.unsplash.com/photo-1615472103125-4c8e0b1948d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     address: "Lake Tahoe, United States",
     description:
       "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
@@ -91,7 +91,7 @@ const listingsData = [
   },
   {
     name: "Luxury Penthouse with City Views",
-    image: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd",
+    image: "https://images.unsplash.com/photo-1569137289129-9383b6d3bdb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     address: "Los Angeles, United States",
     description:
       "Indulge in luxury living with panoramic city views from this stunning penthouse apartment.",

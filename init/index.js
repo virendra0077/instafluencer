@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Listing = require('../module/listing.js');
 const data = require('./data.js');
 
-const mongoURI = 'mongodb://localhost:27017/instafluencer';
+const mongoURI = 'mongodb+srv://virendra_db_user:Virendra26@cluster0.ggz575v.mongodb.net/?appName=Cluster0';
 
 async function main() {
   await mongoose.connect(mongoURI);
