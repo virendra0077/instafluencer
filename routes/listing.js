@@ -5,55 +5,52 @@ const Listing = require('../module/listing');
 const wrapAsync = require('../utils/wrap_async');
 const ExpressError = require('../utils/express_error');
 const { listingSchema } = require('../schema');
-const { authenticate } = require('passport');
 
 const { isLoggedIn, isOwner } = require("../middleware.js");
 const listingController = require("../controller/listing.js");
 
 // VALIDATION
 const validateListing = (req, res, next) => {
-  const { error } = listingSchema.validate(req.body);
-  if (error) {
-    const msg = error.details.map(el => el.message).join(',');
-    throw new ExpressError(400, msg);
-  }
-  next();
+    const { error } = listingSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(400, msg);
+    }
+    next();
 };
 
 router.get('/' , wrapAsync(listingController.home));
 
-// INDEX route
+// INDEX route - all influencers
 router.get('/profile', wrapAsync(listingController.index));
 
-
-// NEW route
+// NEW route - must be before /:id routes
 router.get('/new', isLoggedIn, wrapAsync(listingController.new));
 
 // CREATE
 router.post(
-  '/',
-  isLoggedIn,
-  validateListing,
-  wrapAsync(listingController.create)
+    '/',
+    isLoggedIn,
+    validateListing,
+    wrapAsync(listingController.create)
 );
 
-
-// SHOW
+// SHOW - place after /new to avoid conflict
 router.get("/:id", wrapAsync(listingController.show));
 
-
 // EDIT
-router.get('/:id/edit', isLoggedIn, isOwner , wrapAsync(listingController.edit));
+router.get('/:id/edit', isLoggedIn, isOwner, wrapAsync(listingController.edit));
 
 // UPDATE
 router.put(
-  '/:id',
-  validateListing,isOwner,
-  wrapAsync(listingController.update)
-   );
+    '/:id',
+    isLoggedIn,
+    isOwner,
+    validateListing,
+    wrapAsync(listingController.update)
+);
 
 // DELETE
-router.delete('/:id',isOwner, wrapAsync(listingController.delete));
+router.delete('/:id', isLoggedIn, isOwner, wrapAsync(listingController.delete));
 
-//  THIS IS CRITICAL
 module.exports = router;
