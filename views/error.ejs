@@ -6,33 +6,40 @@
     <div class="row justify-content-center w-100">
       <div class="col-md-6 col-lg-5">
 
-        <div class="card profile-card border-0 shadow-lg text-center">
+        <div class="card error-card border-0 shadow-lg text-center">
           <div class="card-body p-5">
 
+            <!-- Animated Error Icon -->
+            <div class="error-icon-wrapper mb-4">
+              <i class="fa-solid fa-triangle-exclamation fa-4x"></i>
+            </div>
+
             <!-- Status Code -->
-            <h1 class="display-1 fw-bold text-danger mb-2">
+            <h1 class="error-code display-1 fw-bold mb-2">
               <%= statusCode || 500 %>
             </h1>
 
             <!-- Title -->
-            <h4 class="fw-semibold mb-3">
+            <h4 class="error-title fw-semibold mb-3">
               Oops! Something went wrong
             </h4>
 
             <!-- Message -->
-            <p class="text-muted mb-4">
+            <p class="error-message mb-4">
               <%= message || "An unexpected error occurred. Please try again later." %>
             </p>
 
             <!-- Actions -->
             <div class="d-grid gap-2">
               <a href="/" class="btn btn-gradient btn-lg">
+                <i class="fa-solid fa-home me-2"></i>
                 Go to Home
               </a>
               <button
                 onclick="window.history.back()"
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-secondary error-back-btn"
               >
+                <i class="fa-solid fa-arrow-left me-2"></i>
                 Go Back
               </button>
             </div>
@@ -40,8 +47,143 @@
           </div>
         </div>
 
+        <!-- Help Text -->
+        <div class="text-center mt-4">
+          <p class="error-help-text small">
+            Need help? <a href="#" class="error-help-link">Contact Support</a>
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
 
 </body>
+
+<style>
+/* =========================
+   ERROR PAGE STYLES
+   ========================= */
+
+.error-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.error-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #EF4444, #DC2626);
+}
+
+/* Error Icon */
+.error-icon-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  animation: pulse-error 2s ease-in-out infinite;
+}
+
+.error-icon-wrapper i {
+  color: #EF4444;
+}
+
+@keyframes pulse-error {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+  }
+}
+
+/* Error Code */
+.error-code {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+/* Error Title */
+.error-title {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Back Button */
+.error-back-btn {
+  background: var(--bg-elevated) !important;
+  border: 2px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.error-back-btn:hover {
+  background: var(--primary-light) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Help Text */
+.error-help-text {
+  color: var(--text-secondary);
+}
+
+.error-help-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.error-help-link:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-title {
+    font-size: 1.5rem;
+  }
+  
+  .error-icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .error-icon-wrapper i {
+    font-size: 3rem;
+  }
+}
+</style>

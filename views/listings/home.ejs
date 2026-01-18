@@ -1,116 +1,228 @@
-<% layout('layout/boilerplate') %>
+<% layout('layout/boilerplate') %> 
+<!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<div class="main-content">
-<section class="hero-section">
-  <div class="hero-overlay">
-    <div class="container text-center">
-      <h1 class="hero-title">Connect, Create, <span class="text-accent">Conquer.</span></h1>
-      <p class="hero-subtitle">
-        The ultimate marketplace where premium brands meet top-tier influencers. 
-        Scale your brand reach or monetize your influence in just a few clicks.
-      </p>
-      <div class="mt-4">
-        <a href="/signup" class="btn btn-gradient btn-lg me-3">Start Collaborating</a>
-        <a href="/listings/profile" class="btn btn-outline-light btn-lg">Explore Creators</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
 
-<section class="collab-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="collab-image-container">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Collaboration" class="img-fluid rounded-4 shadow">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-grid"></div>
+        
+        <!-- Floating Icons -->
+        <i class="floating-icon fa-brands fa-instagram" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
+        <i class="floating-icon fa-solid fa-chart-line" style="top: 60%; right: 15%; animation-delay: 1s;"></i>
+        <i class="floating-icon fa-solid fa-handshake" style="bottom: 20%; left: 20%; animation-delay: 2s;"></i>
+        <i class="floating-icon fa-solid fa-rocket" style="top: 30%; right: 10%; animation-delay: 1.5s;"></i>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Connect, Create, <span class="text-accent">Conquer.</span></h1>
+            <p class="hero-subtitle">
+                The ultimate marketplace where premium brands meet top-tier influencers. 
+                Scale your brand reach or monetize your influence in just a few clicks.
+            </p>
+            <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+                <a href="/signup" class="btn-gradient">Start Collaborating</a>
+                <a href="/listings/profile" class="btn-outline-light">Explore Creators</a>
+            </div>
         </div>
-      </div>
-      <div class="col-md-6 ps-md-5">
-        <h2 class="fw-bold mb-3">Modern Collaboration for Modern Brands</h2>
-        <p class="text-muted fs-5">
-          Our platform brings together diverse individuals in a modern, collaborative setting. 
-          Whether you are working on a global campaign or a niche local launch, we provide 
-          the tools for professional and successful partnerships.
-        </p>
-        <ul class="list-unstyled">
-          <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Verified Influencer Metrics</li>
-          <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Seamless Brand Communication</li>
-          <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Real-time Campaign Analytics</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- Platform Overview Section -->
+    <section class="platform-overview-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="overview-content">
+                        <h2 class="fw-bold mb-4">Find Your Perfect <span class="text-accent">Instagram Influencer</span></h2>
+                        <p class="lead text-muted mb-4">
+                            Browse through verified Instagram influencer profiles, compare followers and reach, and connect directly with creators who align with your brand vision.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fa-brands fa-instagram"></i> <strong>Verified Instagram Profiles</strong> - All influencers are verified with real metrics</li>
+                            <li><i class="fa-solid fa-filter"></i> <strong>Smart Filtering</strong> - Sort by followers, reach, niche, and location</li>
+                            <li><i class="fa-solid fa-comments"></i> <strong>Direct Communication</strong> - Message influencers instantly through our platform</li>
+                            <li><i class="fa-solid fa-shield-halved"></i> <strong>Secure & Transparent</strong> - Safe collaboration with clear terms</li>
+                        </ul>
+                        <a href="/listings/profile" class="btn btn-gradient mt-3">Browse Influencers</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dashboard-preview">
+                        <div class="preview-card">
+                            <div class="preview-header">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Influencer Dashboard</span>
+                            </div>
+                            <div class="preview-body">
+                                <div class="metric-item">
+                                    <i class="fa-solid fa-user-group"></i>
+                                    <div>
+                                        <div class="metric-label">Total Influencers</div>
+                                        <div class="metric-value">Browse Profiles</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                    <div>
+                                        <div class="metric-label">Average Reach</div>
+                                        <div class="metric-value">View Analytics</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <div>
+                                        <div class="metric-label">Verified Accounts</div>
+                                        <div class="metric-value">100% Authentic</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section -->
     <section class="feature-section">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5" style="color: #333;">Why <span style="color: #FF3366;">Instafluencer?</span></h2>
+            <h2 class="section-title">Why Brands Choose <span class="text-accent">Instafluencer</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-box">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h4>Instagram Focused</h4>
+                        <p>Access a curated network of Instagram influencers with verified followers and authentic engagement rates.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        <h4>Smart Discovery</h4>
-                        <p>Our advanced filters help you find the perfect influencer by niche, audience, and performance metrics.</p>
+                        <h4>Smart Filtering</h4>
+                        <p>Find influencers by followers, reach, niche, location, and engagement metrics to match your brand perfectly.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-box">
                         <i class="fa-solid fa-handshake-simple"></i>
-                        <h4>Seamless Collaboration</h4>
-                        <p>From initial contact to campaign launch, our platform streamlines every step of your partnership.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <h4>Track & Grow</h4>
-                        <p>Monitor campaign performance and grow your brand's reach with data-driven insights.</p>
+                        <h4>Easy Communication</h4>
+                        <p>Contact influencers directly through our platform - no back-and-forth emails or social media DMs needed.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="image-section">
+    <!-- For Brands Section -->
+    <section class="for-brands-section">
         <div class="container">
-            <h2 class="mb-5">See the <span style="color: #FF3366;">Impact</span> You Can Make</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">For <span class="text-accent">Brands</span></h2>
+                    <p class="lead text-muted mb-4">
+                        Discover Instagram influencers who can amplify your brand message and drive real results.
+                    </p>
+                    <div class="brand-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <div>
+                                <h5>View Complete Profiles</h5>
+                                <p>See followers, reach, engagement rates, and past collaborations at a glance.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h5>Filter & Compare</h5>
+                                <p>Use advanced filters to find influencers that match your budget and target audience.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-message"></i>
+                            </div>
+                            <div>
+                                <h5>Direct Messaging</h5>
+                                <p>Reach out to influencers instantly and start your collaboration journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="image-showcase">
+                        <div class="showcase-card">
+                            <i class="fa-solid fa-bullhorn showcase-icon"></i>
+                            <h4>Launch Your Campaign</h4>
+                            <p>Connect with the right influencers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Influencers Section -->
+    <section class="for-influencers-section">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <p class="lead text-secondary">
-                        Imagine your brand's message amplified by authentic voices. With Instafluencer, we make powerful connections happen, driving engagement and real results for your campaigns.
+                    <h2 class="fw-bold mb-4">For <span class="text-accent">Influencers</span></h2>
+                    <p class="lead text-muted mb-4">
+                        Showcase your Instagram influence and get discovered by top brands looking for authentic partnerships.
                     </p>
-                    <ul class="list-unstyled text-muted mt-4">
-                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2 text-success"></i> Access to a diverse pool of vetted creators</li>
-                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2 text-success"></i> Transparent analytics and performance tracking</li>
-                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2 text-success"></i> Secure communication and payment processing</li>
-                    </ul>
-                    <a href="/listings/profile" class="btn btn-brand mt-4">Discover Your Next Partner <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    <div class="influencer-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <div>
+                                <h5>Create Your Profile</h5>
+                                <p>Build a professional profile showcasing your followers, reach, and niche expertise.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h5>Get Discovered</h5>
+                                <p>Brands actively search our platform to find influencers like you for collaborations.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                            </div>
+                            <div>
+                                <h5>Monetize Your Influence</h5>
+                                <p>Turn your Instagram presence into profitable brand partnerships.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/signup" class="btn btn-gradient mt-3">Join as Creator</a>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img 
-                        src="/images/collaboration.png" 
-                        alt="Brand and Influencer Collaboration" 
-                        class="img-fluid rounded shadow-lg"
-                        style="max-height: 500px; width: auto;"
-                    >
+                <div class="col-lg-6">
+                    <div class="image-showcase">
+                        <div class="showcase-card showcase-card-alt">
+                            <i class="fa-solid fa-star showcase-icon"></i>
+                            <h4>Build Your Brand</h4>
+                            <p>Get noticed by top brands</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Elevate Your <span style="color: white; -webkit-text-stroke: 1.5px white; text-shadow: none;">Influence?</span></h2>
-            <p>Whether you're a brand seeking authentic connections or a creator ready to monetize your passion, Instafluencer is your platform for success.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/signup" class="btn btn-cta-white btn-lg">Join as Creator Today! <i class="fa-solid fa-user-plus ms-2"></i></a>
             </div>
         </div>
     </section>
 
+    <!-- How It Works Section -->
     <section class="how-it-works-section">
         <div class="container">
-            <h2 class="mb-5">How It Works</h2>
+            <h2 class="section-title">How It <span class="text-accent">Works</span></h2>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <div class="step-card">
@@ -144,24 +256,55 @@
         </div>
     </section>
 
-    <section class="text-center py-5 bg-light">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h3 class="fw-bold mb-3">Ready to transform your marketing strategy?</h3>
-            <a href="/listings/profile" class="btn btn-brand btn-lg">Get Started Now! <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            <h2>Ready to Elevate Your Influence?</h2>
+            <p>Whether you're a brand seeking authentic connections or a creator ready to monetize your passion, Instafluencer is your platform for success.</p>
+            <a href="/signup" class="btn-cta-white">Join as Creator Today! <i class="fa-solid fa-user-plus ms-2"></i></a>
         </div>
     </section>
-</div>
 
-<script>
-    // Example: Dynamically load featured influencers (if you implement this later)
-    // fetch('/api/featured-influencers')
-    //     .then(res => res.json())
-    //     .then(influencers => {
-    //         const container = document.getElementById('featured-influencers-container');
-    //         if (container) {
-    //             influencers.forEach(influencer => {
-    //                 // Append your influencer card HTML here
-    //             });
-    //         }
-    //     });
-</script>
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = Math.random() * 4 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.feature-box, .step-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
