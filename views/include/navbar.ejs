@@ -28,7 +28,11 @@
       </ul>
       
       <div class="navbar-nav ms-auto align-items-center">
-        <!-- Theme Toggle (will be added by JavaScript) -->
+        <!-- Theme Toggle Button -->
+        <!-- <button id="theme-toggle" class="nav-link btn-nav-primary d-flex align-items-center gap-2" style="font-weight:700;border-radius:8px;padding:0.5rem 1.2rem;background:linear-gradient(135deg, #833AB4, #E1306C);color:white;border:none;box-shadow:0 2px 8px rgba(225,48,108,0.3);transition:all 0.3s;">
+          <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+          <span id="theme-toggle-text">Night Mode</span>
+        </button> -->
         
         <a class="nav-link" href="/listings/new">
           <i class="fa-solid fa-user-plus me-1"></i>
@@ -129,3 +133,37 @@
   color: #4338CA;
 }
 </style>
+
+<script>
+// Theme Toggle Script
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-toggle-icon');
+const themeText = document.getElementById('theme-toggle-text');
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  if (theme === 'dark') {
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    themeText.textContent = 'Day Mode';
+    themeToggle.style.background = 'linear-gradient(135deg, #FD1D1D, #F77737)';
+    themeToggle.style.color = 'white';
+  } else {
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+    themeText.textContent = 'Night Mode';
+    themeToggle.style.background = 'linear-gradient(135deg, #833AB4, #E1306C)';
+    themeToggle.style.color = 'white';
+  }
+}
+
+themeToggle && themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+// On page load, set theme from localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) setTheme(savedTheme);
+</script>
