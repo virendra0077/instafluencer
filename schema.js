@@ -9,7 +9,7 @@ module.exports.listingSchema = Joi.object({
 
     image: Joi.string()
       .uri()
-      .allow('', null) // optional
+      .allow('', null)
       .optional(),
 
     address: Joi.string()
